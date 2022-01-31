@@ -1,0 +1,32 @@
+<!-- .erb file is a mix of HTML + Ruby -->
+<h1>Restaurants</h1>
+
+<!-- A form has 2 import attributes-->
+<!-- 1. action -> WHERE (/somewhere) -->
+<!-- 1. method -> HOW -->
+<form action="/restaurants" method="post">
+  <!-- input needs a NAME (the name will be the key in the params) -->
+  <label for="name">Name</label>
+  <input type="text" name="name">
+  <label for="address">Address</label>
+  <input type="text" name="address">
+  <input type="submit">
+</form>
+
+<ul>
+  <% @restaurants.each do |restaurant| %>
+    <li>
+      <a href="/restaurants/<%= restaurant.id %>">
+        <%= restaurant.name %>
+      </a>
+       - <%= restaurant.address %>
+      </li>
+  <% end %>
+</ul>
+
+
+<!-- How to use Ruby in an html view -->
+<!-- er + tab -->
+<%  %>
+<!-- pe + tab -->
+<%= Time.now %>

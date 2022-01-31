@@ -8,3 +8,4 @@ gem "sinatra-activerecord"
 gem "sinatra-contrib"
 gem "sqlite3"
 gem "thin"
+gem 'pry-byebug'
